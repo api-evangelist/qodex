@@ -1,0 +1,177 @@
+generated: '2026-10-21'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/qodex-openapi-generated.yml
+vocabulary:
+  name: QodexAI Domain Vocabulary
+  description: 'Terms declared by QodexAI''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-21'
+  terms:
+  - term: PostApiCartPromoRequest
+    definition: 'Object declared by the contract with fields: code.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostApiCartPromoRequest
+  - term: PostApiOrdersRequest
+    definition: 'Object declared by the contract with fields: sku, qty.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostApiOrdersRequest
+  - term: PostApiOrdersResponse
+    definition: 'Object declared by the contract with fields: id, status.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostApiOrdersResponse
+  - term: PostApiProjectsAcmeStagingWebhooksTriggerRequest
+    definition: 'Object declared by the contract with fields: environment, tags, callback_url.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostApiProjectsAcmeStagingWebhooksTriggerRequest
+  - term: PostApiProjectsMyProjectSlugWebhooksTriggerRequest
+    definition: 'Object declared by the contract with fields: environment, tags, callback_url.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostApiProjectsMyProjectSlugWebhooksTriggerRequest
+  - term: PostApiProjectsMyProjectSlugWebhooksTriggerResponse
+    definition: 'Object declared by the contract with fields: testRunId, status, scenariosTotal, mode.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostApiProjectsMyProjectSlugWebhooksTriggerResponse
+  - term: PostApiRefundsRequest
+    definition: 'Object declared by the contract with fields: orderId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostApiRefundsRequest
+  - term: PatchApiUsersMeRequest
+    definition: 'Object declared by the contract with fields: name, role.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PatchApiUsersMeRequest
+  - term: PostAuthLoginRequest
+    definition: 'Object declared by the contract with fields: email, password.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostAuthLoginRequest
+  - term: PostAuthLoginResponse
+    definition: 'Object declared by the contract with fields: status, body.error.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostAuthLoginResponse
+  - term: PostCheckoutRequest
+    definition: 'Object declared by the contract with fields: promo.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostCheckoutRequest
+  - term: PostCheckoutResponse
+    definition: 'Object declared by the contract with fields: total, error.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostCheckoutResponse
+  - term: GetPetsPetidResponse
+    definition: 'Object declared by the contract with fields: 200.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/GetPetsPetidResponse
+  - term: PostUsersRequest
+    definition: 'Object declared by the contract with fields: email, name.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostUsersRequest
+  - term: PostUsersResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostUsersResponse
+  - term: PostV1AuthRefreshResponse
+    definition: 'Object declared by the contract with fields: session_token.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostV1AuthRefreshResponse
+  - term: GetV1CartResponse
+    definition: 'Object declared by the contract with fields: items.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/GetV1CartResponse
+  - term: PostV1OrdersRequest
+    definition: 'Object declared by the contract with fields: sku, qty.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostV1OrdersRequest
+  - term: PostV1OrdersResponse
+    definition: 'Object declared by the contract with fields: Authorization, Content-Type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostV1OrdersResponse
+  - term: PostV1PaymentsRequest
+    definition: 'Object declared by the contract with fields: card, expiry, cvc.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostV1PaymentsRequest
+  - term: PostV1PaymentsResponse
+    definition: 'Object declared by the contract with fields: error, decline_code.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostV1PaymentsResponse
+  - term: Api
+    definition: 'Resource group in the contract; its operation POST /api/cart/promo: POST /api/cart/promo'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Auth
+    definition: 'Resource group in the contract; its operation POST /auth/login: Reject login with invalid password'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Checkout
+    definition: 'Resource group in the contract; its operation POST /checkout: POST /checkout'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Invoices
+    definition: 'Resource group in the contract; its operation GET /invoices/{orgb}: Cross‑org invoice read is refused – GET /invoices/{orgB}
+      then expect 403 as admin member anonymous'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Orders
+    definition: 'Resource group in the contract; its operation GET /orders/{id}: scn_c3d4 GET /orders/:id IDOR returns 403 [FAIL]'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Orgs
+    definition: 'Resource group in the contract; its operation GET /orgs/{orgb}/billing: AI Code Review Backed by Real Test Runs'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Path 20With 20Spaces
+    definition: 'Resource group in the contract; its operation GET /path%20with%20spaces: GET /path%20with%20spaces'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Pets
+    definition: 'Resource group in the contract; its operation GET /pets/{petid}: Worked Example: Fix a Broken Path Parameter'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Users
+    definition: 'Resource group in the contract; its operation POST /users: API test scenarios'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Cart
+    definition: 'Resource group in the contract; its operation GET /v1/cart: GET /v1/cart → 200 … 2 items preserved'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Payments
+    definition: 'Resource group in the contract; its operation POST /v1/payments: POST /v1/payments → 402 { "error": "card_expired", "decline_code":
+      "expired_card" }'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml
+  - term: Webhooks
+    definition: 'Resource group in the contract; its operation POST /webhooks/trigger: Event-driven'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/qodex-openapi-generated.yml

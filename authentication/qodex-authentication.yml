@@ -1,0 +1,23 @@
+generated: '2026-10-21'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://qodex.ai/blog/10-api-authentication-best-practices-for-securing-apis
+sources:
+- https://qodex.ai/blog/10-api-authentication-best-practices-for-securing-apis
+- https://qodex.ai/blog/15-api-security-best-practices-to-secure-your-apis-in-2026
+- https://qodex.ai/blog/how-to-get-a-rugcheck-api-key-and-start-using-the-api
+- https://qodex.ai/blog/what-is-api-authentication
+description: Authentication methods described by QodexAI documentation.
+schemes:
+- type: oauth2
+  name: OAuth 2.0
+  evidence: OAuth 2.0 is an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access
+    to their information on other websites without sharing their passwords.
+- type: http-bearer
+  name: Bearer Token
+  evidence: 'The Rugcheck API uses Bearer Token Authentication . This means: Every request must include your API key in the header.'
+  location: header
+  header: Authorization
+  how_to_obtain: Obtain a bearer token (API key) from the Rugcheck dashboard after generating an API key.
+docs: https://qodex.ai/blog/10-api-authentication-best-practices-for-securing-apis
+note: 1 extracted row(s) were dropped because their quote was not on the page.

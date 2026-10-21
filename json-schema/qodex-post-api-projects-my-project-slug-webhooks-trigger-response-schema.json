@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/qodex/main/json-schema/qodex-post-api-projects-my-project-slug-webhooks-trigger-response-schema.json",
+  "title": "PostApiProjectsMyProjectSlugWebhooksTriggerResponse",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostApiProjectsMyProjectSlugWebhooksTriggerResponse",
+  "type": "object",
+  "properties": {
+    "testRunId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "scenariosTotal": {
+      "type": "integer"
+    },
+    "mode": {
+      "type": "string"
+    }
+  }
+}

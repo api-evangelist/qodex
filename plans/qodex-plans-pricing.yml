@@ -1,0 +1,74 @@
+generated: '2026-10-21'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://qodex.ai/pricing
+sources:
+- https://qodex.ai/pricing
+- https://qodex.ai/pricing.md
+- https://qodex.ai/blog/korbit-alternatives
+- https://qodex.ai/blog/gitlab-ai-code-review
+name: QodexAI pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: Individual
+  price_text: $0
+  price: 0
+  description: Automation Testing (continuous testing, priced per project) – Free for every developer
+  features:
+  - Limited monthly usage
+  - Connect one GitHub repository
+  - Up to 25 test scenarios and 100 test runs per month
+  - One AI chat session at a time
+- name: Startup
+  price_text: From $1,299
+  price: 1299
+  description: Automation Testing – priced per project, per month
+  features:
+  - Up to 10 repositories per project
+  - Up to 200 test scenarios and 10,000 test runs per month
+  - 2 concurrent AI chat sessions and 2 concurrent test runs
+  - Full API and UI testing, full OWASP suite
+- name: Scale
+  price_text: From $2,500
+  price: 2500
+  description: Automation Testing – priced per project, per month
+  features:
+  - Unlimited test scenarios, runs, and environments
+  - High concurrency, SSO/SAML, role‑based access, audit logs
+  - Advanced security, data redaction, mTLS, custom data retention
+- name: Free
+  price_text: $0 per month
+  price: 0
+  description: PR Review – priced per developer
+  features:
+  - 20 reviewed pull requests per developer, up to 2 developers
+  - 2 automatic reviews per pull request
+  - Unlimited repositories
+- name: Pro
+  price_text: $30 per developer per month
+  price: 30
+  description: PR Review – priced per developer
+  features:
+  - 50 reviewed pull requests per seat per month, pooled
+  - 3 reviews per pull request
+  - Unlimited repositories and users, email support
+- name: Enterprise
+  price_text: Custom
+  description: PR Review – custom pricing for larger orgs
+  features:
+  - Unlimited reviews per pull request
+  - Self‑hosting, SSO, priority support
+  limits:
+  - name: negotiated
+    limit_text: Custom
+- name: Autopilot
+  price_text: Custom
+  description: Fully autonomous QA – custom scoped
+  features:
+  - Zero human triggers, runs on every PR and deploy
+  - Full API, UI, and security testing
+  limits:
+  - name: negotiated
+    limit_text: Custom
+docs: https://qodex.ai/pricing

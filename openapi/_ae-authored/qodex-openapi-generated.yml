@@ -1,0 +1,767 @@
+openapi: 3.1.0
+info:
+  title: QodexAI API
+  version: '2026-10-21'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-21: 27 operation(s) read from 25 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; QodexAI has published no machine-readable contract
+    that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 8
+    documentation: 19
+    pages-with-code: 10
+    pages-read: 25
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-21'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://qodex.ai/docs/api-testing-endpoint-catalog
+  - https://qodex.ai/docs/security-testing-sensitive-endpoints
+  - https://qodex.ai/product/api-testing
+  - https://qodex.ai/tools/curl-converter
+  - https://qodex.ai/tools/openapi-validator
+  - https://qodex.ai/docs/api-testing-scenarios
+  - https://qodex.ai/docs/run-tests-via-webhook
+  - https://qodex.ai/docs/api-testing-openapi-import
+  - https://qodex.ai/docs/integrations-generic-webhook
+  - https://qodex.ai/docs/api-testing-test-rules
+  - https://qodex.ai/docs/api-testing-auto-verification
+  - https://qodex.ai/docs/kb-scope-a-scan-to-one-route
+  - https://qodex.ai/docs/operating-modes
+  - https://qodex.ai/docs/concepts-scenarios
+  - https://qodex.ai/docs/pr-review-inline-findings
+  - https://qodex.ai/docs/pr-review-verification-probes
+  - https://qodex.ai/docs/security-testing-inverted-semantics
+  - https://qodex.ai/docs/run-tests-tag-filtered
+  - https://qodex.ai/docs/run-tests-full-suite
+  - https://qodex.ai/docs/self-hosted-single-container
+  - https://qodex.ai/product/ai-code-review
+  - https://qodex.ai/product/ui-testing
+  - https://qodex.ai/product/security-testing
+  - https://qodex.ai/product/autopilot
+  - https://qodex.ai/all-tools/url-decoder
+servers:
+- url: https://agents.qodex.ai
+paths:
+  /api/cart/promo:
+    post:
+      operationId: post_api_cart_promo
+      tags:
+      - Api
+      summary: POST /api/cart/promo
+      x-source: https://qodex.ai/product/ui-testing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiCartPromoRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/health:
+    get:
+      operationId: get_api_health
+      tags:
+      - Api
+      summary: GET /api/health
+      x-source: https://qodex.ai/docs/self-hosted-single-container
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl http://localhost:3000/api/health \n The boot log prints which critical environment variables are present, without printing\
+          \ their values. This helps confirm wiring without leaking secrets. \n Without REDIS_URL , Qodex runs the scheduler and agent runner\
+          \ in the same container. That is fine for a small single-container deploy. \n ​ Next steps \n Docker Compose Add Postgres in the same\
+          \ local stack. S"
+  /api/orders:
+    get:
+      operationId: get_api_orders
+      tags:
+      - Api
+      summary: Inverted semantics
+      x-source: https://qodex.ai/docs/security-testing-inverted-semantics
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_api_orders
+      tags:
+      - Api
+      summary: POST /api/orders failed – Anonymous user cannot create an order
+      x-source: https://qodex.ai/product/api-testing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiOrdersRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiOrdersResponse'
+      x-evidence:
+        kind: documentation
+  /api/orders/{id}:
+    get:
+      operationId: get_api_orders_id
+      tags:
+      - Api
+      summary: Sensitive endpoints
+      x-source: https://qodex.ai/docs/security-testing-sensitive-endpoints
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/p/{slug}:
+    post:
+      operationId: post_api_p_slug
+      tags:
+      - Api
+      summary: POST /api/p/{slug}
+      x-source: https://qodex.ai/docs/api-testing-openapi-import
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST \"https://agents.qodex.ai/api/p/<slug>/import/swagger\"  -H \"Authorization: Bearer $QODEX_KEY \"  -F \"file=@openapi.yaml\"\
+          \ \n Qodex validates the document and creates a collection. Every operation under paths becomes a row in the endpoint catalog with method,\
+          \ path, parameters, request schema, response schema, and tags preserved. \n Only HTTP methods become operations. Other keys on a path\
+          \ i"
+  /api/profile/{profileId}:
+    get:
+      operationId: get_api_profile_profileId
+      tags:
+      - Api
+      summary: Critical **Missing auth on profile endpoint** - _security_ - Verified
+      x-source: https://qodex.ai/docs/pr-review-verification-probes
+      parameters:
+      - name: profileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/projects/acme-staging/webhooks/trigger:
+    post:
+      operationId: post_api_projects_acme_staging_webhooks_trigger
+      tags:
+      - Api
+      summary: POST /api/projects/acme-staging/webhooks/trigger
+      x-source: https://qodex.ai/docs/integrations-generic-webhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiProjectsAcmeStagingWebhooksTriggerRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST https://agents.qodex.ai/api/projects/acme-staging/webhooks/trigger  -H \"Authorization: Bearer qk_...\"  -H \"\
+          Content-Type: application/json\"  -d '{ \n \"environment\": \"staging\", \n \"tags\": [\"smoke\"], \n \"callback_url\": \"https://ci.example.com/hooks/qodex/abc123\"\
+          \ \n }' \n Qodex responds immediately with a running test id. When the run finishes, Qodex posts a compact callback: \n { \n \"testRunId\""
+  /api/projects/my-project-slug/test-runs/run_01H8X3J4N5:
+    get:
+      operationId: get_api_projects_my_project_slug_test_runs_run_01H8X3J4N5
+      tags:
+      - Api
+      summary: GET /api/projects/my-project-slug/test-runs/run_01H8X3J4N5
+      x-source: https://qodex.ai/docs/run-tests-via-webhook
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -H \"Authorization: Bearer qk_xxx...\"  https://agents.qodex.ai/api/projects/my-project-slug/test-runs/run_01H8X3J4N5...\
+          \ \n If you provide callback_url , Qodex sends a completion payload with pass and fail counts plus the run URL. \n ​ Per-schedule webhook\
+          \ \n Use a schedule webhook when one external trigger should always run one preconfigured policy. \n POST https://agents.qodex.ai/api/webhooks/sch"
+  /api/projects/my-project-slug/webhooks/trigger:
+    post:
+      operationId: post_api_projects_my_project_slug_webhooks_trigger
+      tags:
+      - Api
+      summary: POST /api/projects/my-project-slug/webhooks/trigger
+      x-source: https://qodex.ai/docs/run-tests-via-webhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiProjectsMyProjectSlugWebhooksTriggerRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiProjectsMyProjectSlugWebhooksTriggerResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST  https://agents.qodex.ai/api/projects/my-project-slug/webhooks/trigger  -H \"Authorization: Bearer qk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\
+          \  -H \"Content-Type: application/json\"  -d '{ \n \"environment\": \"staging\", \n \"tags\": [\"smoke\"], \n \"callback_url\": \"https://ci.example.com/qodex-hook\"\
+          \ \n }' \n Project API keys start with qk_ , are scoped to one project, and are stored only as hashes. The pl"
+  /api/refunds:
+    post:
+      operationId: post_api_refunds
+      tags:
+      - Api
+      summary: POST /api/refunds
+      x-source: https://qodex.ai/docs/api-testing-endpoint-catalog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiRefundsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST https://staging.example.com/api/refunds -H \"Content-Type: application/json\" -d '{\"orderId\": \"123\"}' \n Remove\
+          \ DELETE /users/{id} from the Admin collection. \n The agent can create a collection, add an endpoint from a pasted cURL, remove an\
+          \ endpoint, rename a collection, and merge two collections. \n ​ Keep the catalog in sync \n Use a collection sync mission when the\
+          \ API keeps changing af"
+  /api/users/me:
+    patch:
+      operationId: patch_api_users_me
+      tags:
+      - Api
+      summary: Inverted semantics
+      x-source: https://qodex.ai/docs/security-testing-inverted-semantics
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchApiUsersMeRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/webhooks/schedules/{secret}:
+    post:
+      operationId: post_api_webhooks_schedules_secret
+      tags:
+      - Api
+      summary: Per-schedule webhook
+      description: Use a schedule webhook when one external trigger should always run one preconfigured policy. The secret in the URL is the authentication.
+      x-source: https://qodex.ai/docs/run-tests-via-webhook
+      parameters:
+      - name: secret
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /auth/login:
+    post:
+      operationId: post_auth_login
+      tags:
+      - Auth
+      summary: Reject login with invalid password
+      x-source: https://qodex.ai/docs/concepts-scenarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostAuthLoginRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostAuthLoginResponse'
+      x-evidence:
+        kind: documentation
+  /checkout:
+    post:
+      operationId: post_checkout
+      tags:
+      - Checkout
+      summary: POST /checkout
+      x-source: https://qodex.ai/product/autopilot
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCheckoutRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCheckoutResponse'
+      x-evidence:
+        kind: documentation
+  /invoices/{orgb}:
+    get:
+      operationId: get_invoices_orgb
+      tags:
+      - Invoices
+      summary: Cross‑org invoice read is refused – GET /invoices/{orgB} then expect 403 as admin member anonymous
+      x-source: https://qodex.ai/product/api-testing
+      parameters:
+      - name: orgb
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '403':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /orders/{id}:
+    get:
+      operationId: get_orders_id
+      tags:
+      - Orders
+      summary: scn_c3d4 GET /orders/:id IDOR returns 403 [FAIL]
+      x-source: https://qodex.ai/docs/api-testing-auto-verification
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /orgs/{orgb}/billing:
+    get:
+      operationId: get_orgs_orgb_billing
+      tags:
+      - Orgs
+      summary: AI Code Review Backed by Real Test Runs
+      x-source: https://qodex.ai/product/ai-code-review
+      parameters:
+      - name: orgb
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /orgs/{orgb}/invoices:
+    get:
+      operationId: get_orgs_orgb_invoices
+      tags:
+      - Orgs
+      summary: GET /orgs/{orgB}/invoices expected 403.
+      description: Access to another organization's invoices returns 403, confirming the attack was blocked.
+      x-source: https://qodex.ai/product/security-testing
+      parameters:
+      - name: orgb
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /path%20with%20spaces:
+    get:
+      operationId: get_path_20with_20spaces
+      tags:
+      - Path 20With 20Spaces
+      summary: GET /path%20with%20spaces
+      x-source: https://qodex.ai/all-tools/url-decoder
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: ruby
+        snippet: URI('https://example.com/path%20with%20spaces'
+  /pets/{petid}:
+    get:
+      operationId: get_pets_petid
+      tags:
+      - Pets
+      summary: 'Worked Example: Fix a Broken Path Parameter'
+      x-source: https://qodex.ai/tools/openapi-validator
+      parameters:
+      - name: petid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPetsPetidResponse'
+      x-evidence:
+        kind: documentation
+  /users:
+    post:
+      operationId: post_users
+      tags:
+      - Users
+      summary: API test scenarios
+      x-source: https://qodex.ai/docs/api-testing-scenarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUsersRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUsersResponse'
+      x-evidence:
+        kind: documentation
+  /v1/auth/refresh:
+    post:
+      operationId: post_v1_auth_refresh
+      tags:
+      - Auth
+      summary: POST /v1/auth/refresh → 200 rotated session token
+      x-source: https://qodex.ai/product/api-testing
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1AuthRefreshResponse'
+      x-evidence:
+        kind: documentation
+  /v1/cart:
+    get:
+      operationId: get_v1_cart
+      tags:
+      - Cart
+      summary: GET /v1/cart → 200 … 2 items preserved
+      x-source: https://qodex.ai/product/api-testing
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1CartResponse'
+      x-evidence:
+        kind: documentation
+  /v1/orders:
+    post:
+      operationId: post_v1_orders
+      tags:
+      - Orders
+      summary: POST /v1/orders
+      x-source: https://qodex.ai/tools/curl-converter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1OrdersRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1OrdersResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl 'https://api.example.com/v1/orders'  -X POST  -H 'Authorization: Bearer sk_live_2f9a'  -H 'Content-Type: application/json'\
+          \  --data-raw '{\"sku\":\"A-1\",\"qty\":2}' \n The Python requests tab returns this, copied from the tool: \n import requests\nurl =\
+          \ \"https://api.example.com/v1/orders\"\nheaders = {\n \"Authorization\": \"Bearer sk_live_2f9a\",\n \"Content-Type\": \"application/json\"\
+          ,\n}\ndata = \"{\\\"sku\\\":\\\"A-1"
+  /v1/payments:
+    post:
+      operationId: post_v1_payments
+      tags:
+      - Payments
+      summary: 'POST /v1/payments → 402 { "error": "card_expired", "decline_code": "expired_card" }'
+      x-source: https://qodex.ai/product/api-testing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1PaymentsRequest'
+      responses:
+        '402':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1PaymentsResponse'
+      x-evidence:
+        kind: documentation
+  /webhooks/trigger:
+    post:
+      operationId: post_webhooks_trigger
+      tags:
+      - Webhooks
+      summary: Event-driven
+      x-source: https://qodex.ai/docs/operating-modes
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostApiCartPromoRequest:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Promo code (e.g., SPRING20)
+      required:
+      - code
+    PostApiOrdersRequest:
+      type: object
+      properties:
+        sku:
+          type: string
+          description: Product SKU, e.g., "PRO_77"
+        qty:
+          type: integer
+          description: Quantity, e.g., 1
+      required:
+      - sku
+      - qty
+    PostApiOrdersResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Order identifier, e.g., "ord_8f21"
+        status:
+          type: string
+          description: Order status, e.g., "pending"
+    PostApiProjectsAcmeStagingWebhooksTriggerRequest:
+      type: object
+      properties:
+        environment:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        callback_url:
+          type: string
+    PostApiProjectsMyProjectSlugWebhooksTriggerRequest:
+      type: object
+      properties:
+        environment:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        callback_url:
+          type: string
+    PostApiProjectsMyProjectSlugWebhooksTriggerResponse:
+      type: object
+      properties:
+        testRunId:
+          type: string
+        status:
+          type: string
+        scenariosTotal:
+          type: integer
+        mode:
+          type: string
+    PostApiRefundsRequest:
+      type: object
+      properties:
+        orderId:
+          type: string
+    PatchApiUsersMeRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        role:
+          type: string
+    PostAuthLoginRequest:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      required:
+      - email
+      - password
+    PostAuthLoginResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: Expected HTTP status code 401
+        body.error:
+          type: string
+          description: Error field must exist
+    PostCheckoutRequest:
+      type: object
+      properties:
+        promo:
+          type: string
+          description: Promo code applied, e.g., SPRING20
+    PostCheckoutResponse:
+      type: object
+      properties:
+        total:
+          type: number
+          description: Calculated total after applying promo
+        error:
+          type: string
+          description: 'Error message if calculation fails (e.g., TypeError: total is undefined)'
+    GetPetsPetidResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: One pet
+    PostUsersRequest:
+      type: object
+      properties:
+        email:
+          type: string
+        name:
+          type: string
+      required:
+      - email
+      - name
+    PostUsersResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    PostV1AuthRefreshResponse:
+      type: object
+      properties:
+        session_token:
+          type: string
+          description: New rotated session token
+    GetV1CartResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          description: List of cart items (example shows 2 items)
+    PostV1OrdersRequest:
+      type: object
+      properties:
+        sku:
+          type: string
+        qty:
+          type: integer
+    PostV1OrdersResponse:
+      type: object
+      properties:
+        Authorization:
+          type: string
+        Content-Type:
+          type: string
+    PostV1PaymentsRequest:
+      type: object
+      properties:
+        card:
+          type: string
+          description: Card number, e.g., 4000…0069
+        expiry:
+          type: string
+          description: Expiry date, e.g., 04/22
+        cvc:
+          type: string
+          description: CVC code, e.g., 123
+      required:
+      - card
+      - expiry
+      - cvc
+    PostV1PaymentsResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error identifier, e.g., "card_expired"
+        decline_code:
+          type: string
+          description: Decline reason code, e.g., "expired_card"
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api
+- name: Auth
+- name: Cart
+- name: Checkout
+- name: Invoices
+- name: Orders
+- name: Orgs
+- name: Path 20With 20Spaces
+- name: Payments
+- name: Pets
+- name: Users
+- name: Webhooks

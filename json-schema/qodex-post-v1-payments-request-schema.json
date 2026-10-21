@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/qodex/main/json-schema/qodex-post-v1-payments-request-schema.json",
+  "title": "PostV1PaymentsRequest",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostV1PaymentsRequest",
+  "type": "object",
+  "properties": {
+    "card": {
+      "type": "string",
+      "description": "Card number, e.g., 4000…0069"
+    },
+    "expiry": {
+      "type": "string",
+      "description": "Expiry date, e.g., 04/22"
+    },
+    "cvc": {
+      "type": "string",
+      "description": "CVC code, e.g., 123"
+    }
+  },
+  "required": [
+    "card",
+    "expiry",
+    "cvc"
+  ]
+}

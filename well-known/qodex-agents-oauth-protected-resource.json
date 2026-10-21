@@ -1,0 +1,1 @@
+{"resource":"https://agents.qodex.ai/mcp","authorization_servers":["https://agents.qodex.ai"],"scopes_supported":["mcp"],"resource_name":"Qodex MCP","bearer_methods_supported":["header"]}

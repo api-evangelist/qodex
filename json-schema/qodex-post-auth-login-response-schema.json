@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/qodex/main/json-schema/qodex-post-auth-login-response-schema.json",
+  "title": "PostAuthLoginResponse",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostAuthLoginResponse",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "integer",
+      "description": "Expected HTTP status code 401"
+    },
+    "body.error": {
+      "type": "string",
+      "description": "Error field must exist"
+    }
+  }
+}

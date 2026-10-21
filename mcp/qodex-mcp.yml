@@ -1,0 +1,8 @@
+generated: '2026-10-21'
+method: probed
+source: https://qodex.ai/docs/.well-known/mcp/server-card.json
+deployment:
+  mode: remote
+  endpoint: https://qodex.ai/docs/mcp
+  auth: none
+  verified: probed

@@ -1,0 +1,17 @@
+generated: '2026-10-21'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://qodex.ai/blog/webhooks-unveiled-enhancing-real-time-communication-in-apis
+sources:
+- https://qodex.ai/blog/webhooks-unveiled-enhancing-real-time-communication-in-apis
+- https://qodex.ai/docs/run-tests-via-webhook
+- https://qodex.ai/docs/integrations-generic-webhook
+description: Qodex sends outbound webhook events when a test run completes.
+events:
+- event: test_run_completed
+  description: Dispatched when a test run finishes, containing result summary and metadata.
+delivery:
+  content_type: application/json
+note: Outbound payload signing is not currently implemented. Protect the endpoint with a long random path token, network allowlist, relay validation,
+  or idempotency keyed by testRunId. Qodex does not retry failed webhook deliveries.
+docs: https://qodex.ai/blog/webhooks-unveiled-enhancing-real-time-communication-in-apis

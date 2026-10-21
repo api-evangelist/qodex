@@ -1,0 +1,96 @@
+generated: '2026-10-21'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://qodex.ai/blog/octomind-alternatives
+sources:
+- https://qodex.ai/blog/octomind-alternatives
+- https://qodex.ai/blog/playwright-waitforselector
+- https://qodex.ai/docs/changelog
+entries:
+- breaking: false
+  highlights:
+  - A PR review page in the app, Autopilot agents and tasks, and new controls for security testing, findings, and runs.
+  - PR review page. Code > PR review brings an overview (PRs reviewed, findings posted, acted on, dismissed, time to first review), the pull request
+    list, and review settings together, scoped by repository and month.
+  - Review records. Each pull request has a record with its summary, findings, review history with skip reasons, Q&A, and a Run review / Review
+    again button.
+  - Automatic reviews toggle. Automatic reviews can be turned off per repository.
+  date: '2026-09-17'
+- breaking: false
+  highlights:
+  - PR review commands and learned review context become clearer from GitHub.
+  - Command acknowledgements. Qodex now acknowledges supported PR commands and replies when a command needs user attention.
+  - Bare mention help. A simple @qodex‑ai mention can show the current command help in the PR thread.
+  - Learned PR context. PR review can use project‑specific lessons from earlier resolved findings and reviewer feedback, and explains when no
+    learned context exists yet.
+  date: '2026-08-14'
+- breaking: false
+  highlights:
+  - Sign‑in and auth‑profile setup get easier for teams using multiple identities.
+  - Google and GitHub sign‑in. Users can sign in with Google, GitHub, or email.
+  - Auth‑profile token check. API auth profiles can mint and test a token from the profile card before a scenario or Playground request depends
+    on it.
+  - Clearer token parameters. Token request settings are easier to fill out when a profile needs specific OAuth or login parameters.
+  date: '2026-08-11'
+- breaking: false
+  highlights:
+  - PR review supports monorepos and gives teams more control over which branches are reviewed.
+  - Repo folder scoping. The same GitHub repo can be linked once per project directory, so monorepos can keep separate Qodex projects for separate
+    apps or services.
+  - Base‑branch controls. Teams can choose which base branches should receive Qodex reviews.
+  - Affected route context. PR review can show which application routes are affected by a change, helping teams understand review scope.
+  date: '2026-08-05'
+- breaking: false
+  highlights:
+  - Knowledge becomes easier to browse, import, read, and edit inside Qodex.
+  - Knowledge browser. The Knowledge tab now has a folder‑style browser for project notes and memory files.
+  - Document import. Users can import documents into project knowledge so Qodex can use them as testing context.
+  - Read and edit knowledge files. Knowledge files can be inspected and updated without leaving the Knowledge tab.
+  date: '2026-07-19'
+- breaking: false
+  highlights:
+  - Test run results become easier to share and easier to triage.
+  - Plain‑English failure summaries. Failed runs can explain the likely reason for the failure before users dig into step artifacts.
+  - Downloadable HTML reports. Test run details can export a self‑contained report for sharing with teammates or release owners.
+  - Direct report links. Report emails can take users straight to the downloadable result.
+  date: '2026-07-17'
+- breaking: false
+  highlights:
+  - API scenario evidence becomes easier to inspect after a save or run.
+  - Expandable API step detail. API steps can show request data, captured examples, and file downloads in the scenario detail surface.
+  - Captured request and response samples. Qodex can save useful per‑step examples so users can understand what a scenario actually sent and received.
+  - Step file downloads. Uploaded request files and CSV data files can be downloaded from the relevant scenario surfaces.
+  date: '2026-07-15'
+- breaking: false
+  highlights:
+  - API debugging gets clearer variables, and Qodex can test email‑dependent flows.
+  - Path‑variable rows. API Playground requests can expose path variables as editable rows, including colon‑style params such as :userId.
+  - Unresolved variable warnings. Playground and runs surface unresolved variables so users can add the value to the environment before relying
+    on the request.
+  - Project inbox. Each project can have an inbound email address for testing flows that send email.
+  date: '2026-07-10'
+- breaking: false
+  highlights:
+  - File‑upload scenarios and project login protection ship.
+  - API multipart uploads. API scenarios can include multipart file upload steps.
+  - UI upload replay. UI scenarios can record and replay file‑upload actions.
+  - Project‑level email code. Projects can require an extra email code during sign‑in.
+  date: '2026-07-09'
+- breaking: false
+  highlights:
+  - The Chrome recorder can save signed‑in browser flows more naturally.
+  - Include login in recordings. The Chrome recorder can capture signed‑in manual flows and save them as draft UI scenarios.
+  - Collection rename from chat. Qodex can rename API collections from chat when a collection needs a clearer name.
+  date: '2026-07-08'
+- breaking: false
+  highlights:
+  - The marketing site can collect public scan requests and route them into Qodex.
+  - Public scan‑request form. The qodex.ai website can now accept scan requests from visitors for follow‑up.
+  date: '2026-07-04'
+- breaking: false
+  highlights:
+  - The Chrome recorder can capture signed‑in manual flows and save them as draft UI scenarios.
+  date: '2026-07-03'
+current_version: '2026-09-17'
+note: Versioning scheme is date‑based (YYYY‑MM‑DD).
+docs: https://qodex.ai/blog/octomind-alternatives

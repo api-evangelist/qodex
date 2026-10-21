@@ -1,0 +1,26 @@
+generated: '2026-10-21'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/_ae-authored/qodex-openapi-generated.yml
+format: custom
+envelope:
+  media_type: application/json
+  schema: PostV1PaymentsResponse
+coverage:
+  operations: 27
+  statuses_declared: 2
+problems:
+- status: 402
+  title: Payment Required
+  description: Success (status as documented)
+  operations: 1
+  media_types:
+  - application/json
+  schema: PostV1PaymentsResponse
+- status: 403
+  title: Forbidden
+  description: Success (status as documented)
+  operations: 1
+  media_types: []
+  schema: null

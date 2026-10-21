@@ -1,0 +1,18 @@
+generated: '2026-10-21'
+method: none
+source:
+- https://zapier.com/apps/qodex/integrations
+- https://zapier.com/apps/qodexai/integrations
+- https://n8n.io/integrations/qodex/
+- https://composio.dev/toolkits/qodex
+- https://monid.ai/tools/qodex
+checked:
+- https://composio.dev/toolkits/qodex
+- https://monid.ai/tools/qodex
+- https://n8n.io/integrations/qodex/
+- https://zapier.com/apps/qodex/integrations
+- https://zapier.com/apps/qodexai/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

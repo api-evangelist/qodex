@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/qodex/main/json-schema/qodex-post-api-orders-request-schema.json",
+  "title": "PostApiOrdersRequest",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/qodex-openapi-generated.yml#/components/schemas/PostApiOrdersRequest",
+  "type": "object",
+  "properties": {
+    "sku": {
+      "type": "string",
+      "description": "Product SKU, e.g., \"PRO_77\""
+    },
+    "qty": {
+      "type": "integer",
+      "description": "Quantity, e.g., 1"
+    }
+  },
+  "required": [
+    "sku",
+    "qty"
+  ]
+}

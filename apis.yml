@@ -1,23 +1,138 @@
 aid: qodex
+
 name: QodexAI
-description: 'QodexAI is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://qodex.ai/assets/images/logo-header.png
+
+description: QodexAI provides continuous testing for AI‑speed engineering, turning test knowledge into durable scenarios that evolve with your
+  product. It integrates with GitHub pull requests, CLI, chat, schedules, and deploy checks, helping teams ensure reliable AI‑driven software
+  delivery.
+
 url: https://raw.githubusercontent.com/api-evangelist/qodex/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
 - Company
-apis: []
+- AI
+- Testing
+- Continuous Integration
+- DevOps
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Plans
+  url: plans/qodex-plans-pricing.yml
+- type: Spectral
+  url: rules/qodex-rules.yml
+- type: JSONLD
+  url: json-ld/qodex-context.jsonld
+- type: Vocabulary
+  url: vocabulary/qodex-vocabulary.yml
+- type: Webhooks
+  url: asyncapi/qodex-webhooks.yml
+- type: DataModel
+  url: data-model/qodex-data-model.yml
+- type: ChangeLog
+  url: changelog/qodex-changelog.yml
+- type: Authentication
+  url: authentication/qodex-authentication.yml
+- type: ErrorCatalog
+  url: errors/qodex-problem-types.yml
+- type: Conformance
+  url: conformance/qodex-conformance.yml
+- type: LLMsTxt
+  url: llms/qodex-llms.txt
+- type: MCPServer
+  url: mcp/qodex-mcp.yml
+- type: WellKnown
+  url: well-known/qodex-well-known.yml
+- type: Hosts
+  url: hosts/qodex-hosts.yml
+- type: Vendors
+  url: vendors/qodex-vendors.yml
+- type: GitHubOrganization
+  url: https://github.com/qodex-ai
+- type: ChangeLog
+  url: https://qodex.ai/docs/changelog
+- type: DomainSecurity
+  url: security/qodex-domain-security.yml
 - type: Website
   url: https://qodex.ai/
+- type: Documentation
+  url: https://qodex.ai/docs
+- type: APIReference
+  url: https://qodex.ai/docs
+- type: GettingStarted
+  url: https://qodex.ai/docs/introduction
+- type: Pricing
+  url: https://qodex.ai/pricing
+- type: TermsOfService
+  url: https://qodex.ai/terms
+- type: PrivacyPolicy
+  url: https://qodex.ai/privacy
+- type: Blog
+  url: https://qodex.ai/blog
+- type: Support
+  url: https://qodex.ai/contact-us
+
+apis:
+- name: Qodex API
+  description: API testing platform allowing import of OpenAPI specs and automated testing of APIs.
+  humanURL: https://qodex.ai/docs/api-testing
+  common: []
+  aid: qodex:qodex-api-2
+- aid: qodex:qodex-api
+  name: QodexAI API
+  description: 'QodexAI API as documented publicly: 27 operations. Contract generated from the documentation by API Evangelist (2026-10-21); not
+
+    the provider''s own document.'
+  humanURL: https://qodex.ai/docs/api-testing-endpoint-catalog
+  baseURL: https://agents.qodex.ai
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/qodex-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/qodex-post-v1-payments-request-schema.json
+  - type: JSONSchema
+    url: json-schema/qodex-post-checkout-response-schema.json
+  - type: JSONSchema
+    url: json-schema/qodex-post-api-orders-request-schema.json
+  - type: JSONSchema
+    url: json-schema/qodex-post-api-orders-response-schema.json
+  - type: JSONSchema
+    url: json-schema/qodex-post-auth-login-response-schema.json
+  - type: JSONSchema
+    url: json-schema/qodex-post-api-projects-my-project-slug-webhooks-trigger-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Documentation provides API testing features but no machine‑readable OpenAPI or other contract is available.
+  evidence:
+  - url: https://qodex.ai/docs/api-testing
+    status: 200
+  checked: '2026-10-21'
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 29
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
